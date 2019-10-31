@@ -10,3 +10,9 @@ def solution(p, c):
     p_count = Counter(p)
     c_count = Counter(c)
     return list((p_count - c_count).keys())[0]
+
+
+# 테스트
+print(solution(["leo", "kiki", "eden"], ["eden", "kiki"]))
+print(solution(["marina", "josipa", "nikola", "vinko", "filipa"], ["josipa", "filipa", "marina", "nikola"]))
+print(solution(["mislav", "stanko", "mislav", "ana"], ["stanko", "ana", "mislav"]))

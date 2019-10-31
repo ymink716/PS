@@ -1,4 +1,4 @@
-# 체육복 (못품)
+# 체육복 
 
 a = [2, 0, 2, 0, 2]
 def solution(n, lost, reserve):

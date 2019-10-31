@@ -1,5 +1,4 @@
 # 모의고사
-
 def solution(answers):
     # 수포자들의 찍기 패턴
     first = [1, 2, 3, 4, 5]
@@ -23,3 +22,8 @@ def solution(answers):
             result.append(i+1)
 
     return result
+
+
+# 테스트
+print(solution([1, 2, 3, 4, 5]))
+print(solution([1, 3, 2, 4, 2]))

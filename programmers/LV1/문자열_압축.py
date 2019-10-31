@@ -1,4 +1,4 @@
-# 문자열 압축 (못품)
+# 문자열 압축 
 
 def solution(s):
     answer =  0
