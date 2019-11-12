@@ -1,6 +1,6 @@
 # 문자열 압축 (못품)
 
-def solution(s):
+def solution(s)
     answer =  0
     return answer
 
