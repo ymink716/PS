@@ -1,4 +1,4 @@
-# 완주하지 못한 선수
+ # 완주하지 못한 선수
 
 # Counter 객체로 변환
 # 완주하지 못한 사람은 1명이므로 두 Counter 객체를 빼주면 {'사람': 1} 형태의 값이 나온다
@@ -9,10 +9,10 @@ from collections import Counter
 def solution(p, c):
     p_count = Counter(p)
     c_count = Counter(c)
-    return list((p_count - c_count).keys())[0]
+    person = p_count - c_count
+    return list(person.keys())[0]
 
-
-# 테스트
+# test
 print(solution(["leo", "kiki", "eden"], ["eden", "kiki"]))
 print(solution(["marina", "josipa", "nikola", "vinko", "filipa"], ["josipa", "filipa", "marina", "nikola"]))
 print(solution(["mislav", "stanko", "mislav", "ana"], ["stanko", "ana", "mislav"]))
