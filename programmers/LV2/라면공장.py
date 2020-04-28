@@ -9,7 +9,7 @@ def solution(stock, dates, supplies, k):
         for i in range(idx, len(dates)):
             if stock < dates[i]: break
             heapq.heappush(h, -supplies[i])
-            idx += 1
+            idx = i + 1
 
         stock += heapq.heappop(h) * (-1)
         cnt += 1

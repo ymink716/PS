@@ -5,7 +5,7 @@ def solution(answers):
     second = [2, 1, 2, 3, 2, 4, 2, 5]
     third = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]
 
-    scores = [0, 0, 0] # 수포자들의 맞춘 갯수
+    scores = [0, 0, 0] # 수포자들이 맞춘 갯수
     index = 0
     for answer in answers:
         if answer == first[index % len(first)]:
@@ -24,6 +24,6 @@ def solution(answers):
     return result
 
 
-# 테스트
+# test
 print(solution([1, 2, 3, 4, 5]))
 print(solution([1, 3, 2, 4, 2]))
