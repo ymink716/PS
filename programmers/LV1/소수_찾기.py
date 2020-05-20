@@ -9,5 +9,5 @@ def solution(n):
 def isPrime(n):
     if n == 2:
         return True
-    for i in range(n // 2):
-        if n % i 
+    #for i in range(n // 2):
+        #if n % i :
