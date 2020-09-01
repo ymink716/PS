@@ -8,10 +8,10 @@ def solution(str1, str2):
     for i in range(len(str1) - 1):
         # 두 원소가 문자이면
         if str1[i].isalpha() and str1[i+1].isalpha():
-            A.append(str1[i:i+2].lower())  # A에 슬라이싱한 2자리 문자열 추가
+            A.append(str1[i:i+2])  # A에 슬라이싱한 2자리 문자열 추가
     for i in range(len(str2) - 1):
         if str2[i].isalpha() and str2[i+1].isalpha():
-            B.append(str2[i:i+2].lower())
+            B.append(str2[i:i+2])
 
     # 집합 A, B가 공집합인 경우
     if len(A) == 0 and len(B) == 0:
