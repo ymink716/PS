@@ -1,0 +1,6 @@
+## DATETIME에서 DATE로 형 변환
+
+```MYSSQL
+select animal_id, name, date_format(datetime, '%Y-%m-%d') as '날짜'
+from animal_ins;
+```
