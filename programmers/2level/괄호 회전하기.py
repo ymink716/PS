@@ -10,7 +10,7 @@ def solution(s):
                 stack.append(i)
             # 닫는 괄호인 경우
             else:
-                if len(stack) == 0: 
+                if len(stack) == 0:
                     check = False
                     break
                 elif i == ")" and stack[-1] == "(":
