@@ -28,4 +28,4 @@ def solution(tickets):
 
 # test
 print(solution([["ICN", "JFK"], ["HND", "IAD"], ["JFK", "HND"]]))
-#print(solution([["ICN", "SFO"], ["ICN", "ATL"], ["SFO", "ATL"], ["ATL", "ICN"], ["ATL", "SFO"]]))
+print(solution([["ICN", "SFO"], ["ICN", "ATL"], ["SFO", "ATL"], ["ATL", "ICN"], ["ATL", "SFO"]]))

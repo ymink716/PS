@@ -14,13 +14,16 @@ def solution(info, query):
     candidates = dict()
     for i in info:
         a, b, c, d, e = i.split()
+        # 이 응시자가 통과할 수 있는 query의 모든 경우(점수 제외)를 key
         possible = list(product([a, '-'], [b, '-'], [c, '-'], [d, '-']))
+        # value는 리스트로 두고 점수를 넣어둠
         for p in possible:
             try:
                 candidates[''.join(p)].append(int(e))
             except KeyError:
                 candidates[''.join(p)] = [int(e)]
 
+    # 이진탐색을 위한 정렬
     for key in candidates.keys():
         candidates[key].sort()
 
@@ -29,9 +32,10 @@ def solution(info, query):
         a, b, c, d, e = q.replace(" and ", " ").split()
         k = ''.join([a, b, c, d])
         score = int(e)
+        # 해당 쿼리의 조건으로 candidates 딕셔너리에서 검색
         if k not in candidates:
             answer.append(0)
-        else:
+        else:  # 조건에 맞으면 조건에 맞는 점수들을 이진탐색하여 확인
             answer.append(len(candidates[k]) - binary_search(candidates[k], score))
 
     return answer

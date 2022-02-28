@@ -18,7 +18,8 @@ def solution(phone_book):
                 return False
     return True
 
-#test
+
+# test case
 pb1 = ["119", "97674223", "1195524421"]
 pb2 = ["123", "456", "789"]
 pb3 = ["12", "123", "1235", "567", "88"]

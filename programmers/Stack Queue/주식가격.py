@@ -15,5 +15,6 @@ def solution(prices):
 
     return answer
 
-# test
+
+# test case
 print(solution([1, 2, 3, 2, 3]))
