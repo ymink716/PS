@@ -15,7 +15,7 @@ def solution(n, lost, reserve):
         if i > 0 and students[i-1] == 2:
             students[i-1] -= 1
             students[i] += 1
-        elif i < len(students)-1 and students[i+1] == 2:
+        elif i < n-1 and students[i+1] == 2:
             students[i+1] -= 1
             students[i] += 1
 
