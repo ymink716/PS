@@ -11,8 +11,7 @@ def solution(maps):
     while q:
         x, y = q.popleft()
 
-        # 최종 경로 도착
-        if x == n - 1 and y == m - 1:
+        if x == n - 1 and y == m - 1:  # 최종 경로 도착
             return visited[x][y]
 
         # 4가지 방향에 대해서 방문 확인
@@ -25,6 +24,7 @@ def solution(maps):
                 if visited[nx][ny] == 0 and maps[nx][ny] == 1:
                     visited[nx][ny] = visited[x][y] + 1  # 몇 번재 방문인지
                     q.append((nx, ny))
+
     return -1  # 상대 팀 진영에 도달할 수 없는 경우
 
 

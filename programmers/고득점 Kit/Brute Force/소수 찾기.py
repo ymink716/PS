@@ -15,15 +15,13 @@ def solution(numbers):
                 k += num
 
     for i in range(1, len(numbers) + 1):
-        P = permutations(list(numbers), i) # 순열 구하기
+        P = permutations(list(numbers), i)  # 순열 구하기
         for value in list(P):
             n = int("".join(list(value)))
             if primes[n]:  # 소수 판별
                 answers.add(n)
 
     return len(answers)
-
-
 
 
 # test

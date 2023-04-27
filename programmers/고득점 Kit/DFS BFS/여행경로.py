@@ -21,7 +21,6 @@ def solution(tickets):
             path.append(stack.pop())  # path에 저장
         else:  # top을 시작점으로 하는 end 값 중 마지막 값을 빼서 stack에 저장
             stack.append(graph[top].pop())
-        print(stack, path)
 
     return path[::-1]  # 끝에서부터 저장되었으므로 리스트를 뒤집어 리턴한다.
 

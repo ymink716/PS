@@ -1,4 +1,3 @@
-# 같은 숫자는 싫어
 def solution(arr):
     answer = []
     overlap = arr[0] # 현재 1번 이상 나온 숫자

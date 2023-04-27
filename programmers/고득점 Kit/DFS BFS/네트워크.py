@@ -1,11 +1,11 @@
 def dfs(computers, visited, i):
     # 방문 여부 갱신
-    if visited[i] == False:
+    if not visited[i]:
         visited[i] = True
     # i번 컴퓨터의 연결 정보를 순회
     for j in range(len(computers[i])):
         # i와 j 컴퓨터가 연결되어 있고 j가 아직 방문하지 않았다면
-        if computers[i][j] == 1 and visited[j] == False:
+        if computers[i][j] == 1 and not visited[j]:
             dfs(computers, visited, j)  # j에 대하여 탐색 진행
 
 def solution(n, computers):
@@ -14,7 +14,7 @@ def solution(n, computers):
     # n개 컴퓨터를 순회하면서
     for i in range(n):
         # 아직 방문하지 않은 컴퓨터라면
-        if visited[i] == False:
+        if not visited[i]:
             dfs(computers, visited, i)  # i번 컴퓨터에 대한 탐색
             answer += 1  # 네트워크 +1
     return answer

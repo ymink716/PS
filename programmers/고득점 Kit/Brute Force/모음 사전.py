@@ -4,7 +4,7 @@ def solution(word):
     array = []
 
     for i in range(1, 6):
-        for s in product(['A', 'E', 'I', 'O', 'U'], repeat=i):
+        for s in product(['A', 'E', 'I', 'O', 'U'], repeat=i):  # 중복 순열
             array.append(''.join(s))
 
     array.sort()

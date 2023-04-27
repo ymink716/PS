@@ -1,36 +1,25 @@
 def solution(name):
-    # 각 자리의 상하 조작의 최소값 구하기 : char-'A'와 'Z'-char+1 중에서 작은 값을 고른다
-    array = [min(ord(char) - ord('A'), ord('Z') - ord(char) + 1) for char in name]
+    answer = 0  # 조이스틱 조작 횟수
+    min_move = len(name) - 1  # 기본 최소 좌우 이동 횟수 : 길이 - 1
 
-    answer = 0
-    index = 0
-    while True:
-        answer += array[index]  # 현재 위치 문자의 변경 횟수에 추가
-        array[index] = 0  # 변경되었으므로 0으로 바꿔준다
+    for i, char in enumerate(name):
+        # 해당 알파벳 변경 최솟값을 추가
+        answer += min(ord(char) - ord('A'), ord('Z') - ord(char) + 1)
 
-        # 모든 조작이 끝난 경우
-        if sum(array) == 0:
-            break
+        # 해당 알파벳 다음부터 연속된 A 문자열 찾기
+        next = i + 1
+        while next < len(name) and name[next] == 'A':
+            next += 1
 
-        # 좌우 조작의 최소 횟수 구하기 : A와 이미 변경된 값 반대쪽으로
-        # 왼쪽 오른쪽에서 0을 만나는 경우(A이거나 이미 변경됨)의 최소값을 구한다
-        left, right = 1, 1
-        while array[index - left] == 0:
-            left += 1
-        while array[index + right] == 0:
-            right += 1
+        # 기존값, 연속된 A의 왼쪽시작 방식, 연속된 A의 오른쪽 시작 방식 비교
+        min_move = min(min_move, 2 * i + len(name) - next, i + 2 * (len(name) - next))
 
-        # 왼쪽이 작은 경우, 왼쪽으로 간 횟수를 더해주고 인덱스를 왼쪽으로 옮김
-        if left < right:
-            answer += left
-            index -= left
-        # 그게 아니면 오른쪽으로 간 횟수를 더해주고 인덱스를 오른쪽으로 옮김
-        else:
-            answer += right
-            index += right
-
+    answer += min_move  # 알파벳 변경(상하이동) 횟수에 좌우이동 횟수 추가
     return answer
 
+"""
+참고 : https://velog.io/@jqdjhy/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%A1%B0%EC%9D%B4%EC%8A%A4%ED%8B%B1-Greedy#%EC%B6%94%EA%B0%80-%EC%84%A4%EB%AA%85
+"""
 
 # test
 print(solution('JEROEN'))
