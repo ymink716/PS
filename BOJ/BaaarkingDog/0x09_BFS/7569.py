@@ -39,7 +39,7 @@ def bfs():
 for k in range(h):
     for i in range(n):
         for j in range(m):
-            if warehouse[k][i][j] == 1 and visited[k][i][j] == False:
+            if warehouse[k][i][j] == 1:
                 q.append((k, i, j))
                 visited[k][i][j] = True
 
