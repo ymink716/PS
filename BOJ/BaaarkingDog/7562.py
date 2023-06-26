@@ -46,5 +46,3 @@ for _ in range(int(input())):
     end = tuple(map(int, input().split()))
 
     bfs(l, graph, start, end)
-
-
